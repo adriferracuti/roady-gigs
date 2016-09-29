@@ -1,10 +1,9 @@
 function processResponse(response, body) {
-    let rawGigs = JSON.parse(body),
-        gigs;
+    let gigs;
 
     switch (response.statusCode) {
         case 200:
-            gigs = process200(rawGigs);
+            gigs = process200(JSON.parse(body));
             break;
         case 404:
             gigs = process404();
