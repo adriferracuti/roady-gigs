@@ -5,12 +5,14 @@ function processResponse(response, body) {
         case 200:
             gigs = process200(JSON.parse(body));
             break;
+
         case 404:
             gigs = process404();
             //TODO
             break;
+
         default:
-            throw 'Not handled status code';
+            return null;
     }
 
     return gigs;
